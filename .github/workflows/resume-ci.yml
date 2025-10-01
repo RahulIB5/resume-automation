@@ -1,0 +1,71 @@
+name: Build, Deploy and Archive Resume
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "resume.tex"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2. Install LaTeX
+      - name: Install LaTeX
+        run: |
+          sudo apt update
+          sudo apt install -y texlive-latex-base texlive-latex-recommended \
+                              texlive-fonts-recommended texlive-latex-extra
+
+      # 3. Compile resume.tex to PDF
+      - name: Compile LaTeX
+        run: |
+          pdflatex -interaction=nonstopmode resume.tex
+          pdflatex -interaction=nonstopmode resume.tex
+          if [ ! -f resume.pdf ]; then
+            echo "PDF build failed."
+            exit 1
+          fi
+
+      # 4. Create HTML viewer
+      - name: Create HTML viewer
+        run: |
+          echo '<!DOCTYPE html><html><head><title>Resume</title><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><style>html,body{margin:0;height:100%;background:#f9f9f9}embed{width:100%;height:100%;border:none}</style></head><body><embed src="latest_resume.pdf" type="application/pdf" /></body></html>' > index.html
+
+      # 5. Rename PDF for latest
+      - name: Rename PDF
+        run: mv resume.pdf latest_resume.pdf
+
+      # 6. Deploy latest PDF + HTML to GitHub Pages
+      - name: Deploy to latest-resumes branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          publish_branch: latest-resumes
+          force_orphan: true
+
+      # 7. Archive daily PDF in archives branch
+      - name: Archive daily PDF
+        run: |
+          DATE=$(date +'%d-%m-%Y')
+          FILENAME="resume_$DATE.pdf"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          # Clone archives branch
+          git clone --depth 1 --branch archives https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} archive-temp
+          cd archive-temp
+          # Remove any existing PDF for today
+          if ls resume_$DATE*.pdf 1> /dev/null 2>&1; then
+            git rm resume_$DATE*.pdf || true
+          fi
+          # Copy new PDF
+          cp ../latest_resume.pdf "$FILENAME"
+          git add "$FILENAME"
+          git commit -m "Archive resume for $DATE" || echo "No changes to commit"
+          git push origin archives

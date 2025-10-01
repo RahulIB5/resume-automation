@@ -1,0 +1,241 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\classesList}[4]{
+    \item\small{
+        {#1 #2 #3 #4 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+
+\begin{center}
+  {\Huge \scshape Rahul I Basaragi} \\[4pt]
+  \begin{minipage}[t]{0.3\textwidth}
+    \raggedright
+    \faPhone~ +91-861-848-5610 \\
+    \faEnvelope~ \href{mailto:rahulib7172@gmail.com}{rahulib7172@gmail.com}
+  \end{minipage}
+  \begin{minipage}[t]{0.35\textwidth}
+    \centering
+    \faGlobe~ \href{https://rahulibasaragi.tech}{Portfolio} \\
+  \end{minipage}
+  \begin{minipage}[t]{0.3\textwidth}
+    \raggedleft
+    \faLinkedin~ \href{https://www.linkedin.com/in/rahul-i-basaragi-05886829b/}{LinkedIn} \\
+    \faGithub~ \href{https://github.com/RahulIB5}{GitHub}
+  \end{minipage}
+\end{center}
+
+
+
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+    \resumeSubheading
+      {Dayananda Sagar College of Engineering} {2023 -- 2027}
+      {Bachelor of Engineering in Computer Science and Engineering } {\textbf{CGPA: 9.15}}
+\resumeSubHeadingListEnd
+
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: TypeScript, JavaScript, Python, C++, HTML, CSS} \\
+     \textbf{Technologies/Frameworks}{: Next.JS, React.JS, Three.JS, Node.JS, Express.JS,  ejs, Bootstrap, Tailwind CSS} \\
+     \textbf{Database Management}{: MongoDB, PostgreSQL, Firebase, Supabase, SQLite} \\
+     \textbf{UI/UX and Design}{: Figma (Wireframing and Prototyping), Canva (Presentation and Graphics)} \\
+     \textbf{Other Tools}{: VS Code, Git, GitHub, PyCharm, Vercel, Render} \\
+     \textbf{Soft Skills}{: Presentation Skills, Communication Skills, Team Collaboration} \\
+    }}
+ \end{itemize}
+ \vspace{-16pt}
+
+\section{Projects}
+    \vspace{-5pt}
+    \resumeSubHeadingListStart
+    
+      \resumeProjectHeading
+          {\textbf{Whisper - MERN Stack Chat Application} $|$ \emph{MongoDB, Express, React, Node.js, Socket.io, TailwindCSS} $|$ \href{https://github.com/RahulIB5/Whisper}{\textbf{Github}}}{}
+          \resumeItemListStart
+            \resumeItem{Developed a full-featured real-time chat application using the \textbf{MERN} stack with \textbf{Socket.io} for instant messaging.}
+            \resumeItem{Implemented \textbf{JWT} authentication and authorization with \textbf{Zustand} for global state management.}
+            \resumeItem{Integrated features including \textbf{real-time messaging}, online status indicators, image sharing, custom profile pictures, and 32 UI themes.}
+            \resumeItem{Designed responsive UI with \textbf{TailwindCSS} and \textbf{Daisy UI}, while implementing comprehensive error handling on both server and client sides.}
+          \resumeItemListEnd
+          \vspace{-13pt}
+
+          \resumeProjectHeading
+  {\textbf{Aurora - Blogging Platform} $|$ \emph{Next.js, TypeScript, Prisma, PostgreSQL} $|$ \href{https://github.com/RahulIB5/zblog}{\textbf{GitHub}}}{}
+  \resumeItemListStart
+    \resumeItem{Developed a modern blogging platform with features like user authentication (Sign up, Sign in, Sign out) using \textbf{Clerk}.}
+    \resumeItem{Implemented \textbf{CRUD} functionality for blog posts with a rich text editor (React Quill), along with \textbf{like}, \textbf{comment}, and \textbf{keyword search} features.}
+    \resumeItem{Designed a responsive UI using Tailwind CSS and shadcn/ui, supporting a personalized user dashboard.}
+    \resumeItem{Utilized \textbf{Next.js 15} (App Router) with server actions, dynamic routing for SEO, and type-safe development with TypeScript, \textbf{Prisma}, and \textbf{Zod}.}
+  \resumeItemListEnd
+  \vspace{-13pt}
+
+        \resumeProjectHeading
+          {\textbf{AI Recipe Generator} $|$ \emph{React.js, Mistral AI, Hugging Face API} $|$ \href{https://github.com/RahulIB5/Recipe-Gen}{\textbf{Github}}}{}
+          \resumeItemListStart
+            \resumeItem{RecipeGen is a \textbf{React-based AI-powered} recipe generator that creates personalized recipes based on user-inputted ingredients or preferences.}
+            \resumeItem{It utilizes \textbf{Mistral AI} and the \textbf{Hugging Face API} to generate unique recipes instantly.}
+            \resumeItem{The application is built with React.js providing a simple and efficient user experience.}
+          \resumeItemListEnd
+\vspace{-15pt}
+
+\resumeProjectHeading
+  {\textbf{MERN Agent Task Distribution System} $|$ \emph{MERN Stack, Tailwind CSS, ShadCN UI, Vite, TypeScript} $|$ \href{https://github.com/RahulIB5/Agent-Manager}{\textbf{GitHub}}}{}
+  \resumeItemListStart
+    \resumeItem{Built a full-stack web app to manage agents and distribute tasks from uploaded \textbf{CSV/XLSX} files equally among them.}
+    \resumeItem{Implemented \textbf{JWT-based authentication}, admin dashboard, and protected routes using Express.js and MongoDB.}
+    \resumeItem{Enabled \textbf{CSV parsing}, agent-wise task allocation logic, and persistent data storage.}
+    \resumeItem{Designed a responsive UI with \textbf{TailwindCSS} and \textbf{ShadCN UI}, optimized with Vite + TypeScript for performance.}
+  \resumeItemListEnd
+\vspace{-13pt}
+
+      
+     \resumeProjectHeading
+        {\textbf{Tenzies Game} $|$ \emph{React.js, CSS, JavaScript} $|$ \href{https://github.com/RahulIB5/Tenzieeeesss}{\textbf{Github}}}{}
+        \resumeItemListStart
+          \resumeItem{Developed a fun and fast-paced dice game in which players roll ten dice, with the aim of matching all to the same number.}
+          \resumeItem{Implemented \textbf{React state management} to track dice values, roll counts, and game timer functionality.}
+          \resumeItem{Utilized \textbf{React hooks} \textbf{(useState, useEffect)} to manage component lifecycle and side effects.}
+        \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+        \vspace{-13pt}
+      
+
+    
+
+%-----------INVOLVEMENT---------------
+\section{Extracurricular}
+    \resumeSubHeadingListStart
+        \resumeSubItem{\textbf{\href{https://www.instagram.com/bytexync/}{ByteXync} - PR Team Member} \hfill \textit{Sept 2024 -- Present}}
+            \resumeItemListStart
+                \resumeItem{Managed social media content and marketing initiatives to increase campus engagement with tech-focused events.}
+                \resumeItem{Helped coordinate outreach efforts to build connections with industry professionals and \textbf{sponsors}.}
+            \resumeItemListEnd
+                
+        \resumeSubItem{\textbf{\href{https://www.instagram.com/oscodedsce/}{OSCodeDSCE} - Marketing Team Member} \hfill \textit{Dec 2024 -- Present}}
+            \resumeItemListStart
+                \resumeItem{Created engaging content for social media platforms to increase community participation.}
+                \resumeItem{Assisted in organizing coding sessions and hackathons to foster collaboration among student developers.}
+            \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+    
+
+
+\end{document}
