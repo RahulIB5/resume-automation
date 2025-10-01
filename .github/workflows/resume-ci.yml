@@ -19,8 +19,8 @@ jobs:
       - name: Install LaTeX
         run: |
           sudo apt update
-          sudo apt install -y texlive-latex-base texlive-latex-recommended \
-                              texlive-fonts-recommended texlive-latex-extra
+          sudo apt install -y texlive-latex-extra texlive-fonts-recommended \
+                              texlive-fonts-extra texlive-luatex
 
       # 3. Compile resume.tex to PDF
       - name: Compile LaTeX
